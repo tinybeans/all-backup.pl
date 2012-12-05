@@ -109,7 +109,7 @@ foreach my $db_name (@db_names) {
 
     push(@logs, "########## DATABASE [$db_name] ##########\n\n[DATABASE NAME]\n$db_name");
 
-    # DBに接続    
+    # DBに接続
     my $dsn = "dbi:$dbi:$db_name:$db_host";
     $dsn .= ":$db_port" if $db_port;
     $dsn .= ";mysql_socket=$db_socket" if $db_socket;
@@ -126,7 +126,7 @@ foreach my $db_name (@db_names) {
     if ($db_config =~ /MTVersion\s+([\w\.]+)/g) {
         push(@logs, "[MTVersion]\n$1");
     }
-    
+
     # DBを切断
     $db->disconnect();
 
